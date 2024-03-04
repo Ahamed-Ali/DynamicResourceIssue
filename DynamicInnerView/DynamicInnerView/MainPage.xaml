@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:local="clr-namespace:DynamicInnerView"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DynamicInnerView.MainPage">
+
+    <ContentPage.Resources>
+        <Color x:Key="redColor">Red</Color>
+    </ContentPage.Resources>
+
+    <StackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <local:CustomEntry Text="Static Resource entry for inner views">
+            <local:CustomEntry.CustomEntryTextStyle>
+                <local:CustomEntryStyle TextColor="{StaticResource redColor}"/>
+            </local:CustomEntry.CustomEntryTextStyle>
+        </local:CustomEntry>
+
+        <local:CustomEntry Text="Dynamic Resource entry for inner views">
+            <local:CustomEntry.CustomEntryTextStyle>
+                <local:CustomEntryStyle TextColor="{DynamicResource redColor}"/>
+            </local:CustomEntry.CustomEntryTextStyle>
+        </local:CustomEntry>
+    </StackLayout>
+   
+</ContentPage>
